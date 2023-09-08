@@ -10,26 +10,25 @@ namespace art
     {
         static void Main(string [] args)
         {
-        string messageOne = "Введите ваше имя:";
-        string messageTwo = "Введите вашу Фамилию:";
-         
-        string name = GetDataFromUser(messageOne); 
+            string name = GetDataFromUser("Введите ваше имя");
 
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Данные сохранил!");
-        Console.ResetColor();
+            ChangeConsoleColor(ConsoleColor.Green);
 
-        
-        string surName = GetDataFromUser(messageTwo);
-        
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Данные сохранил!");
-        Console.ResetColor();
+            Console.WriteLine("Данные сохранил!");
+            Console.ResetColor();
 
-        Console.WriteLine($"{name} {surName}");
+
+            string surName = GetDataFromUser("Введите вашу Фамилию:");
+
+            ChangeConsoleColor(ConsoleColor.Yellow);
+
+            Console.WriteLine("Данные сохранил!");
+            Console.ResetColor();
+
+            Console.WriteLine($"{name} {surName}");
         }
 
-        public static void GetDataFromUser(string message;)
+        public static string GetDataFromUser(string message)
         {
             Console.WriteLine(message);
 
