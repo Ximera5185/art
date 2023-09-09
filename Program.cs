@@ -12,22 +12,17 @@ namespace art
         {
             string name = GetDataFromUser("Введите ваше имя");
 
-            ChangeConsoleColor(ConsoleColor.Green);
-
-            Console.WriteLine("Данные сохранил!");
-            Console.ResetColor();
-
+            ShowSystemMessage(ConsoleColor.DarkGreen);
 
             string surName = GetDataFromUser("Введите вашу Фамилию:");
 
-            ChangeConsoleColor(ConsoleColor.Yellow);
-
-            Console.WriteLine("Данные сохранил!");
-            Console.ResetColor();
+            ShowSystemMessage(ConsoleColor.DarkYellow);
 
             Console.WriteLine($"{name} {surName}");
-        }
 
+            Console.ReadKey();
+        }
+ 
         public static string GetDataFromUser(string message)
         {
             Console.WriteLine(message);
@@ -37,9 +32,12 @@ namespace art
             return dataFromUser;
         }
 
-        public static void ChangeConsoleColor(ConsoleColor color)
+        public static void ShowSystemMessage(ConsoleColor color)
         {
             Console.ForegroundColor = color;
+
+            Console.WriteLine("Данные сохранил!");
+            Console.ResetColor();
         }
     }
 }
